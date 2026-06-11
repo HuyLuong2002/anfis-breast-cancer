@@ -1,0 +1,169 @@
+{
+  "artifact_basename": "20260611_152114_lan_1",
+  "preset_name": "RUN_2",
+  "trial_tag": "lan_1",
+  "run_note": "Basic preprocessing - split 70/30",
+  "preprocessing": "drop ID, drop duplicates, median imputation, IQR outlier removal, StandardScaler, SelectKBest",
+  "model": "ANFIS Hybrid Learning",
+  "train_features": [
+    "Uniformity_Cell_Size",
+    "Uniformity_Cell_Shape",
+    "Bare_Nuclei",
+    "Bland_Chromatin"
+  ],
+  "test_size": 0.3,
+  "random_state": 42,
+  "epoch": 100,
+  "membership_functions_per_feature": 3,
+  "expected_rule_count": 81,
+  "model_path": "C:\\Hoc-tap\\vs-workspace\\py-workspace\\anfis-breast-cancer\\models\\20260611_152114_lan_1_anfis.pkl",
+  "scaler_path": "C:\\Hoc-tap\\vs-workspace\\py-workspace\\anfis-breast-cancer\\models\\20260611_152114_lan_1_scaler.pkl",
+  "anfis_interpretability": {
+    "rule_count": 81,
+    "misclassified_test_samples": 40,
+    "explained_test_sample_positions": [
+      6,
+      7,
+      9,
+      13,
+      14,
+      15
+    ],
+    "top_rules_by_activation": [
+      {
+        "luật": "R5",
+        "IF": "Uniformity_Cell_Size Thấp AND Uniformity_Cell_Shape Thấp AND Bare_Nuclei Thấp AND Bland_Chromatin Trung bình",
+        "THEN_nghiêng_về": "Malignant",
+        "đầu_ra_Sugeno_trung_bình": 0.5163,
+        "độ_kích_hoạt_tb": 0.0876,
+        "độ_kích_hoạt_lớn_nhất": 0.4217,
+        "số_lần_là_luật_mạnh_nhất": 23
+      },
+      {
+        "luật": "R81",
+        "IF": "Uniformity_Cell_Size Cao AND Uniformity_Cell_Shape Cao AND Bare_Nuclei Cao AND Bland_Chromatin Cao",
+        "THEN_nghiêng_về": "Benign",
+        "đầu_ra_Sugeno_trung_bình": -0.0228,
+        "độ_kích_hoạt_tb": 0.1296,
+        "độ_kích_hoạt_lớn_nhất": 0.9995,
+        "số_lần_là_luật_mạnh_nhất": 15
+      },
+      {
+        "luật": "R1",
+        "IF": "Uniformity_Cell_Size Thấp AND Uniformity_Cell_Shape Thấp AND Bare_Nuclei Trung bình AND Bland_Chromatin Thấp",
+        "THEN_nghiêng_về": "Benign",
+        "đầu_ra_Sugeno_trung_bình": 0.1058,
+        "độ_kích_hoạt_tb": 0.0768,
+        "độ_kích_hoạt_lớn_nhất": 0.6004,
+        "số_lần_là_luật_mạnh_nhất": 9
+      },
+      {
+        "luật": "R53",
+        "IF": "Uniformity_Cell_Size Trung bình AND Uniformity_Cell_Shape Cao AND Bare_Nuclei Cao AND Bland_Chromatin Trung bình",
+        "THEN_nghiêng_về": "Benign",
+        "đầu_ra_Sugeno_trung_bình": 0.0454,
+        "độ_kích_hoạt_tb": 0.0454,
+        "độ_kích_hoạt_lớn_nhất": 0.8108,
+        "số_lần_là_luật_mạnh_nhất": 8
+      },
+      {
+        "luật": "R54",
+        "IF": "Uniformity_Cell_Size Trung bình AND Uniformity_Cell_Shape Cao AND Bare_Nuclei Cao AND Bland_Chromatin Cao",
+        "THEN_nghiêng_về": "Benign",
+        "đầu_ra_Sugeno_trung_bình": 0.1827,
+        "độ_kích_hoạt_tb": 0.0603,
+        "độ_kích_hoạt_lớn_nhất": 0.894,
+        "số_lần_là_luật_mạnh_nhất": 8
+      }
+    ]
+  },
+  "comparison_goal": "ANFIS Hybrid Learning vs Neural Network truyền thống",
+  "anfis": {
+    "accuracy": 0.79661,
+    "confusion_matrix": [
+      [
+        61,
+        5
+      ],
+      [
+        19,
+        33
+      ]
+    ],
+    "classification_report": {
+      "Benign": {
+        "precision": 0.7625,
+        "recall": 0.9242424242424242,
+        "f1-score": 0.8356164383561644,
+        "support": 66.0
+      },
+      "Malignant": {
+        "precision": 0.868421052631579,
+        "recall": 0.6346153846153846,
+        "f1-score": 0.7333333333333333,
+        "support": 52.0
+      },
+      "accuracy": 0.7966101694915254,
+      "macro avg": {
+        "precision": 0.8154605263157895,
+        "recall": 0.7794289044289044,
+        "f1-score": 0.7844748858447488,
+        "support": 118.0
+      },
+      "weighted avg": {
+        "precision": 0.8091770740410348,
+        "recall": 0.7966101694915254,
+        "f1-score": 0.7905425276681372,
+        "support": 118.0
+      }
+    }
+  },
+  "neural_network_mlp": {
+    "accuracy": 0.90678,
+    "confusion_matrix": [
+      [
+        62,
+        4
+      ],
+      [
+        7,
+        45
+      ]
+    ],
+    "classification_report": {
+      "Benign": {
+        "precision": 0.8985507246376812,
+        "recall": 0.9393939393939394,
+        "f1-score": 0.9185185185185185,
+        "support": 66.0
+      },
+      "Malignant": {
+        "precision": 0.9183673469387755,
+        "recall": 0.8653846153846154,
+        "f1-score": 0.8910891089108911,
+        "support": 52.0
+      },
+      "accuracy": 0.9067796610169492,
+      "macro avg": {
+        "precision": 0.9084590357882283,
+        "recall": 0.9023892773892774,
+        "f1-score": 0.9048038137147048,
+        "support": 118.0
+      },
+      "weighted avg": {
+        "precision": 0.9072834734483328,
+        "recall": 0.9067796610169492,
+        "f1-score": 0.9064309820812588,
+        "support": 118.0
+      }
+    },
+    "model_path": "C:\\Hoc-tap\\vs-workspace\\py-workspace\\anfis-breast-cancer\\models\\20260611_152114_lan_1_neural_network_mlp.pkl",
+    "hidden_layer_sizes": [
+      16,
+      8
+    ]
+  },
+  "support": {
+    "test_samples": 118
+  }
+}
