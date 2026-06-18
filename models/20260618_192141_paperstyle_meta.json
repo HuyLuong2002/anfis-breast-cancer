@@ -1,0 +1,39 @@
+{
+  "timestamp":"20260618_192141",
+  "dataset":"UCI WBCD original",
+  "n_features_raw":9,
+  "feature_selection_method":"PCA-based ranking (paper), keep top-3 original features",
+  "selected_features":[
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "pca_explained_variance_ratio":[
+    0.6554997563,
+    0.0862161964,
+    0.0599168874,
+    0.051069703,
+    0.042252969,
+    0.0335418098,
+    0.0327114612,
+    0.0289707724,
+    0.0098203747
+  ],
+  "split_mode":"paper strict 200\/263\/200",
+  "used_samples":663,
+  "dropped_samples_for_paper_split":20,
+  "train_size":200,
+  "check_size":263,
+  "test_size":200,
+  "epoch":300,
+  "optimizer":"SGD",
+  "learning_rate":0.01,
+  "membership_function":"Gaussian",
+  "membership_per_input":3,
+  "num_rules":27,
+  "best_train_rmse":0.3608255138,
+  "loss_log_path":"models\\20260618_192141_paperstyle_pca_feature_select_training_loss_log.csv",
+  "best_model_path":"models\\20260618_192141_paperstyle_pca_feature_select_best_model.pkl",
+  "metrics_json_path":"models\\20260618_192141_paperstyle_metrics.json",
+  "metrics_csv_path":"models\\20260618_192141_paperstyle_metrics.csv"
+}
