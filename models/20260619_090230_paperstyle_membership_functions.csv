@@ -1,0 +1,10 @@
+Input,Linguistic term,mu (center),sigma
+Clump Thickness,Low,-1.2212,1.0644
+Clump Thickness,Medium,0.3753,1.0643
+Clump Thickness,High,1.9718,1.0643
+Uniformity of Cell Size,Low,-0.7022,0.9795
+Uniformity of Cell Size,Medium,0.7665,0.9802
+Uniformity of Cell Size,High,2.2362,0.9794
+Uniformity of Cell Shape,Low,-0.7418,1.0045
+Uniformity of Cell Shape,Medium,0.7651,1.0046
+Uniformity of Cell Shape,High,2.2719,1.0045

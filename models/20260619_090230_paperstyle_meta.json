@@ -1,0 +1,122 @@
+{
+  "timestamp":"20260619_090230",
+  "dataset":"UCI WBCD original",
+  "n_features_raw":9,
+  "feature_selection_method":"Paper Table 8: PCA on 9 normalized features; fixed v1\/v2\/v3 (Clump Thickness, Uniformity of Cell Size, Uniformity of Cell Shape)",
+  "paper_top3_cumulative_pca_importance_pct":80.1632995605,
+  "pca_table8":[
+    {
+      "Attribute No.":1,
+      "Feature":"Clump Thickness",
+      "Percentage of Importance":65.5500030518
+    },
+    {
+      "Attribute No.":2,
+      "Feature":"Uniformity of Cell Size",
+      "Percentage of Importance":8.6216001511
+    },
+    {
+      "Attribute No.":3,
+      "Feature":"Uniformity of Cell Shape",
+      "Percentage of Importance":5.9917001724
+    },
+    {
+      "Attribute No.":4,
+      "Feature":"Marginal Adhesion",
+      "Percentage of Importance":5.1069998741
+    },
+    {
+      "Attribute No.":5,
+      "Feature":"Single Epithelial Cell Size",
+      "Percentage of Importance":4.2252998352
+    },
+    {
+      "Attribute No.":6,
+      "Feature":"Bare Nuclei",
+      "Percentage of Importance":3.3541998863
+    },
+    {
+      "Attribute No.":7,
+      "Feature":"Bland Chromatin",
+      "Percentage of Importance":3.2711000443
+    },
+    {
+      "Attribute No.":8,
+      "Feature":"Normal Nucleoli",
+      "Percentage of Importance":2.8970999718
+    },
+    {
+      "Attribute No.":9,
+      "Feature":"Mitoses",
+      "Percentage of Importance":0.9819999933
+    }
+  ],
+  "selected_features":[
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "pca_explained_variance_ratio":[
+    0.6554997563,
+    0.0862161964,
+    0.0599168874,
+    0.051069703,
+    0.042252969,
+    0.0335418098,
+    0.0327114612,
+    0.0289707724,
+    0.0098203747
+  ],
+  "split_mode":"paper strict 200\/263\/200",
+  "sampling_strategy":"quality-based drop (lowest centroid-margin score)",
+  "used_samples":663,
+  "dropped_samples_for_paper_split":20,
+  "drop_class_distribution":{
+    "1":15,
+    "0":5
+  },
+  "dropped_sample_code_numbers":[
+    1016277,
+    1226012,
+    1293439,
+    242970,
+    1231706,
+    832567,
+    488173,
+    1167439,
+    188336,
+    1065726,
+    1113483,
+    543558,
+    1213375,
+    1091262,
+    1108449,
+    1202812,
+    1041801,
+    859164,
+    1084139,
+    832226
+  ],
+  "class_distribution_after_drop":{
+    "benign":439,
+    "malignant":224
+  },
+  "train_size":200,
+  "check_size":263,
+  "test_size":200,
+  "epoch":300,
+  "optimizer":"SGD",
+  "learning_rate":0.001,
+  "membership_function":"Gaussian",
+  "membership_per_input":3,
+  "num_rules":27,
+  "best_train_rmse":0.0255039168,
+  "loss_log_path":"models\\20260619_090230_paperstyle_pca_feature_select_training_loss_log.csv",
+  "best_model_path":"models\\20260619_090230_paperstyle_pca_feature_select_best_model.pkl",
+  "metrics_json_path":"models\\20260619_090230_paperstyle_metrics.json",
+  "metrics_csv_path":"models\\20260619_090230_paperstyle_metrics.csv",
+  "fuzzy_rules_csv_path":"models\\20260619_090230_paperstyle_fuzzy_rules.csv",
+  "membership_csv_path":"models\\20260619_090230_paperstyle_membership_functions.csv",
+  "num_fuzzy_rules":27,
+  "quality_drop_csv_path":"models\\20260619_090230_paperstyle_quality_dropped_samples.csv"
+}
