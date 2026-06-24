@@ -1,0 +1,32 @@
+{
+  "timestamp": "20260624_073217",
+  "run_tag": "paperstyle_pca_feature_select",
+  "metrics": {
+    "CHECK": {
+      "split": "CHECK",
+      "accuracy": 0.9429657794676806,
+      "precision": 0.9,
+      "recall": 0.9310344827586207,
+      "f1_score": 0.9152542372881356,
+      "roc_auc": 0.9399490595611285,
+      "tn": 167,
+      "fp": 9,
+      "fn": 6,
+      "tp": 81,
+      "support": 263
+    },
+    "TEST": {
+      "split": "TEST",
+      "accuracy": 0.935,
+      "precision": 0.8970588235294118,
+      "recall": 0.9104477611940298,
+      "f1_score": 0.9037037037037037,
+      "roc_auc": 0.9289080911233307,
+      "tn": 126,
+      "fp": 7,
+      "fn": 6,
+      "tp": 61,
+      "support": 200
+    }
+  }
+}

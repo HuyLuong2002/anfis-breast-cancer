@@ -1,0 +1,172 @@
+{
+  "timestamp":"20260624_073217",
+  "dataset":"UCI WBCD original",
+  "n_features_raw":9,
+  "feature_selection_method":"Paper Table 8: PCA on 9 normalized features; fixed v1\/v2\/v3",
+  "paper_top3_cumulative_pca_importance_pct":78.0644989014,
+  "pca_table8":[
+    {
+      "Attribute No.":1,
+      "Feature":"Clump Thickness",
+      "Percentage of Importance":62.5363006592
+    },
+    {
+      "Attribute No.":2,
+      "Feature":"Uniformity of Cell Size",
+      "Percentage of Importance":9.301199913
+    },
+    {
+      "Attribute No.":3,
+      "Feature":"Uniformity of Cell Shape",
+      "Percentage of Importance":6.2270002365
+    },
+    {
+      "Attribute No.":4,
+      "Feature":"Marginal Adhesion",
+      "Percentage of Importance":5.7300000191
+    },
+    {
+      "Attribute No.":5,
+      "Feature":"Single Epithelial Cell Size",
+      "Percentage of Importance":4.6614999771
+    },
+    {
+      "Attribute No.":6,
+      "Feature":"Bare Nuclei",
+      "Percentage of Importance":3.7370998859
+    },
+    {
+      "Attribute No.":7,
+      "Feature":"Bland Chromatin",
+      "Percentage of Importance":3.4988999367
+    },
+    {
+      "Attribute No.":8,
+      "Feature":"Normal Nucleoli",
+      "Percentage of Importance":3.184499979
+    },
+    {
+      "Attribute No.":9,
+      "Feature":"Mitoses",
+      "Percentage of Importance":1.1234999895
+    }
+  ],
+  "selected_features":[
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "pca_explained_variance_ratio":[
+    0.6253625751,
+    0.0930123106,
+    0.0622700267,
+    0.0572997294,
+    0.0466148704,
+    0.03737133,
+    0.0349892303,
+    0.0318452306,
+    0.0112346914
+  ],
+  "split_mode":"paper-like 200\/263\/200",
+  "outlier_method":"Euclidean distance to data center on 9 raw features; threshold = mean + OUTLIER_STD_MULTIPLIER * std",
+  "outlier_std_multiplier":2.5,
+  "outlier_threshold":16.5121002197,
+  "outliers_removed":18,
+  "used_samples":663,
+  "outlier_drop_class_distribution":{
+    "1":18
+  },
+  "quality_dropped_sample_code_numbers":[
+    1016277,
+    1293439
+  ],
+  "class_distribution_663":{
+    "benign":442,
+    "malignant":221
+  },
+  "train_size":200,
+  "check_size":263,
+  "test_size":200,
+  "epoch":300,
+  "optimizer":"SGD (premise\/MF only)",
+  "learning_rate":0.1,
+  "inner_steps_per_epoch":1,
+  "grad_clip_norm":1.0,
+  "sigma_min":0.001,
+  "early_stop_patience":50,
+  "best_epoch":300,
+  "training_mode":"hybrid 2-step + grad clip + sigma clamp + early stop + rollback",
+  "fuzzy_system":"FS() + grid 27 rules + expert THEN benign\/malignant",
+  "membership_function":"Gaussian (low \/ medium \/ high)",
+  "membership_per_input":3,
+  "rule_partitioning":"grid 3^3 = 27",
+  "mf_init_log":[
+    {
+      "var":"Clump Thickness",
+      "mu":[
+        -1.2045,
+        0.417,
+        2.0384
+      ],
+      "sigma":1.081
+    },
+    {
+      "var":"Uniformity of Cell Size",
+      "mu":[
+        -0.6809,
+        0.8781,
+        2.4372
+      ],
+      "sigma":1.0394
+    },
+    {
+      "var":"Uniformity of Cell Shape",
+      "mu":[
+        -0.7237,
+        0.8793,
+        2.4824
+      ],
+      "sigma":1.0687
+    }
+  ],
+  "output_type":"crisp classification: benign=0, malignant=1",
+  "num_rules":27,
+  "expert_rules":[
+    "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS medium) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS high) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS medium) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS high) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS medium) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS high) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS medium) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS high) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS medium) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS high) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS medium) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS high) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS low) THEN (Diagnosis IS benign)",
+    "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS medium) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS high) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS low) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS medium) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS high) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS low) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS medium) THEN (Diagnosis IS malignant)",
+    "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS high) THEN (Diagnosis IS malignant)"
+  ],
+  "best_train_rmse":0.1234816409,
+  "loss_log_path":"models\\20260624_073217_paperstyle_gaussian27_training_loss_log.csv",
+  "best_model_path":"models\\20260624_073217_paperstyle_pca_feature_select_best_model.pkl",
+  "metrics_json_path":"models\\20260624_073217_paperstyle_metrics.json",
+  "metrics_csv_path":"models\\20260624_073217_paperstyle_metrics.csv",
+  "fuzzy_rules_csv_path":"models\\20260624_073217_paperstyle_fuzzy_rules.csv",
+  "membership_csv_path":"models\\20260624_073217_paperstyle_membership_functions.csv",
+  "num_fuzzy_rules":27,
+  "quality_drop_csv_path":"models\\20260624_073217_paperstyle_quality_dropped_samples.csv"
+}
