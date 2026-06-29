@@ -1,0 +1,10 @@
+Input,Linguistic term,mu (center),sigma
+Clump Thickness,Thấp (low),-1.0437,1.3191
+Clump Thickness,Trung bình (medium),0.6723,1.4829
+Clump Thickness,Cao (high),2.0394,1.1143
+Uniformity of Cell Size,Thấp (low),-0.6176,1.1663
+Uniformity of Cell Size,Trung bình (medium),0.9401,1.2131
+Uniformity of Cell Size,Cao (high),2.3474,1.176
+Uniformity of Cell Shape,Thấp (low),-0.7037,1.1702
+Uniformity of Cell Shape,Trung bình (medium),0.8212,1.2292
+Uniformity of Cell Shape,Cao (high),2.397,1.193

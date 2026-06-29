@@ -1,0 +1,2 @@
+split,phase,accuracy,precision,recall,f1_score,roc_auc,tn,fp,fn,tp,support
+FULL,pre_train,0.6666666666666666,0.0,0.0,0.0,0.5,442,0,221,0,663

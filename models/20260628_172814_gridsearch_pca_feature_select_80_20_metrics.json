@@ -1,0 +1,37 @@
+{
+  "timestamp": "20260628_172814",
+  "run_tag": "gridsearch_pca_feature_select",
+  "split_ratio": "80-20",
+  "learning_rate": 0.05,
+  "epochs": 50,
+  "test_accuracy_pct": 95.49,
+  "metrics": {
+    "TRAIN": {
+      "split": "TRAIN",
+      "accuracy": 0.9622641509433962,
+      "precision": 0.953757225433526,
+      "recall": 0.9322033898305084,
+      "f1_score": 0.9428571428571428,
+      "tn": 345,
+      "fp": 8,
+      "fn": 12,
+      "tp": 165,
+      "support": 530
+    },
+    "TEST": {
+      "split": "TEST",
+      "accuracy": 0.9398496240601504,
+      "precision": 0.9090909090909091,
+      "recall": 0.9090909090909091,
+      "f1_score": 0.9090909090909091,
+      "tn": 85,
+      "fp": 4,
+      "fn": 4,
+      "tp": 40,
+      "support": 133
+    }
+  },
+  "model_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_best_model.pkl",
+  "loss_log_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_training_loss_log.csv",
+  "membership_csv_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_membership_functions.csv"
+}

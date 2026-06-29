@@ -1,0 +1,60 @@
+{
+  "created_at": "20260629_104707",
+  "dataset": "UCI WBCD original",
+  "model_type": "MLPClassifier (sklearn)",
+  "training_mode": "full_663_no_split",
+  "selected_features": [
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "feature_validation": {
+    "n_features_in": 3,
+    "feature_names_in": [
+      "clump_thickness",
+      "uniformity_of_cell_size",
+      "uniformity_of_cell_shape"
+    ],
+    "input_shape": [
+      663,
+      3
+    ]
+  },
+  "mlp_config": {
+    "hidden_layer_sizes": [
+      16
+    ],
+    "activation": "relu",
+    "solver": "adam",
+    "alpha": 0.0001,
+    "batch_size": 32,
+    "learning_rate_init": 0.001,
+    "max_iter": 500,
+    "random_state": 42,
+    "early_stopping": false
+  },
+  "full_663_in_sample": {
+    "split": "FULL_663 (in-sample)",
+    "accuracy": 0.9592760180995475,
+    "precision": 0.9369369369369369,
+    "recall": 0.9411764705882353,
+    "f1_score": 0.9390519187358917,
+    "roc_auc": 0.9927878217071723,
+    "tn": 428,
+    "fp": 14,
+    "fn": 13,
+    "tp": 208,
+    "support": 663
+  },
+  "cv_5fold": {
+    "cv_folds": 5,
+    "accuracy_mean": 0.9592959671907041,
+    "accuracy_std": 0.013899110648793197,
+    "precision_mean": 0.9393540245685269,
+    "recall_mean": 0.9411111111111111,
+    "f1_mean": 0.9390898578555307,
+    "roc_auc_mean": 0.9912358454308148
+  },
+  "n_iter": 152,
+  "final_loss": 0.0975358055832221
+}

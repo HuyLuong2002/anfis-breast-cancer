@@ -1,0 +1,94 @@
+{
+  "created_at": "20260629_090622",
+  "dataset": "UCI WBCD original",
+  "phase": "pre_post_compare",
+  "zerotype": false,
+  "split_label": "70-30",
+  "compare_stamp": "20260628_172814",
+  "selected_features": [
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "num_rules": 27,
+  "pre_train": {
+    "TRAIN": {
+      "split": "TRAIN",
+      "phase": "pre_train",
+      "accuracy": 0.665948275862069,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5,
+      "tn": 309,
+      "fp": 0,
+      "fn": 155,
+      "tp": 0,
+      "support": 464
+    },
+    "TEST": {
+      "split": "TEST",
+      "phase": "pre_train",
+      "accuracy": 0.6683417085427136,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5,
+      "tn": 133,
+      "fp": 0,
+      "fn": 66,
+      "tp": 0,
+      "support": 199
+    }
+  },
+  "post_train": {
+    "TRAIN": {
+      "split": "TRAIN",
+      "phase": "post_train",
+      "accuracy": 0.9655172413793104,
+      "precision": 0.9483870967741935,
+      "recall": 0.9483870967741935,
+      "f1_score": 0.9483870967741935,
+      "roc_auc": 0.9961269443574486,
+      "tn": 301,
+      "fp": 8,
+      "fn": 8,
+      "tp": 147,
+      "support": 464
+    },
+    "TEST": {
+      "split": "TEST",
+      "phase": "post_train",
+      "accuracy": 0.9447236180904522,
+      "precision": 0.9365079365079365,
+      "recall": 0.8939393939393939,
+      "f1_score": 0.9147286821705426,
+      "roc_auc": 0.9461152882205514,
+      "tn": 129,
+      "fp": 4,
+      "fn": 7,
+      "tp": 59,
+      "support": 199
+    }
+  },
+  "comparison": [
+    {
+      "split": "TRAIN",
+      "pre_train_accuracy": 0.665948275862069,
+      "post_train_accuracy": 0.9655172413793104,
+      "delta_accuracy": 0.29956896551724144,
+      "pre_train_f1": 0.0,
+      "post_train_f1": 0.9483870967741935,
+      "delta_f1": 0.9483870967741935
+    },
+    {
+      "split": "TEST",
+      "pre_train_accuracy": 0.6683417085427136,
+      "post_train_accuracy": 0.9447236180904522,
+      "delta_accuracy": 0.27638190954773867,
+      "pre_train_f1": 0.0,
+      "post_train_f1": 0.9147286821705426,
+      "delta_f1": 0.9147286821705426
+    }
+  ]
+}

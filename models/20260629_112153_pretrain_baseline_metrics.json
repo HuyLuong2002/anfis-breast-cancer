@@ -1,0 +1,58 @@
+{
+  "created_at": "20260629_112153",
+  "dataset": "UCI WBCD original",
+  "phase": "pre_post_compare",
+  "zerotype": false,
+  "eval_scope": "full_663",
+  "train_split_label": "70-30",
+  "compare_stamp": "20260628_172814",
+  "selected_features": [
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "num_rules": 27,
+  "pre_train": {
+    "FULL": {
+      "split": "FULL",
+      "phase": "pre_train",
+      "accuracy": 0.6666666666666666,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.5,
+      "tn": 442,
+      "fp": 0,
+      "fn": 221,
+      "tp": 0,
+      "support": 663
+    }
+  },
+  "post_train": {
+    "FULL": {
+      "split": "FULL",
+      "phase": "post_train",
+      "accuracy": 0.9592760180995475,
+      "precision": 0.944954128440367,
+      "recall": 0.9321266968325792,
+      "f1_score": 0.9384965831435079,
+      "roc_auc": 0.9809227902786595,
+      "tn": 430,
+      "fp": 12,
+      "fn": 15,
+      "tp": 206,
+      "support": 663
+    }
+  },
+  "comparison": [
+    {
+      "split": "FULL",
+      "pre_train_accuracy": 0.6666666666666666,
+      "post_train_accuracy": 0.9592760180995475,
+      "delta_accuracy": 0.2926093514328809,
+      "pre_train_f1": 0.0,
+      "post_train_f1": 0.9384965831435079,
+      "delta_f1": 0.9384965831435079
+    }
+  ]
+}

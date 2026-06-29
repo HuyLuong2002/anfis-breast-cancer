@@ -1,0 +1,310 @@
+{
+  "timestamp": "20260628_172814",
+  "run_tag": "gridsearch_pca_feature_select",
+  "dataset": "UCI WBCD original",
+  "n_features_raw": 9,
+  "feature_selection_method": "Paper Table 8: PCA on 9 normalized features; fixed v1/v2/v3",
+  "paper_top3_cumulative_pca_importance_pct": 78.0645,
+  "pca_table8": [
+    {
+      "Attribute No.": 1,
+      "Feature": "Clump Thickness",
+      "Percentage of Importance": 62.53630065917969
+    },
+    {
+      "Attribute No.": 2,
+      "Feature": "Uniformity of Cell Size",
+      "Percentage of Importance": 9.301199913024902
+    },
+    {
+      "Attribute No.": 3,
+      "Feature": "Uniformity of Cell Shape",
+      "Percentage of Importance": 6.2270002365112305
+    },
+    {
+      "Attribute No.": 4,
+      "Feature": "Marginal Adhesion",
+      "Percentage of Importance": 5.730000019073486
+    },
+    {
+      "Attribute No.": 5,
+      "Feature": "Single Epithelial Cell Size",
+      "Percentage of Importance": 4.661499977111816
+    },
+    {
+      "Attribute No.": 6,
+      "Feature": "Bare Nuclei",
+      "Percentage of Importance": 3.7370998859405518
+    },
+    {
+      "Attribute No.": 7,
+      "Feature": "Bland Chromatin",
+      "Percentage of Importance": 3.4988999366760254
+    },
+    {
+      "Attribute No.": 8,
+      "Feature": "Normal Nucleoli",
+      "Percentage of Importance": 3.184499979019165
+    },
+    {
+      "Attribute No.": 9,
+      "Feature": "Mitoses",
+      "Percentage of Importance": 1.1234999895095825
+    }
+  ],
+  "selected_features": [
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape"
+  ],
+  "pca_explained_variance_ratio": [
+    0.6253625750541687,
+    0.09301231056451797,
+    0.06227002665400505,
+    0.05729972943663597,
+    0.046614870429039,
+    0.037371329963207245,
+    0.03498923033475876,
+    0.03184523060917854,
+    0.011234691366553307
+  ],
+  "split_mode": "grid search 80/20, 70/30, 60/40 (stratified, random_state=42)",
+  "outlier_method": "Euclidean distance to data center on 9 raw features; threshold = mean + OUTLIER_STD_MULTIPLIER * std",
+  "outlier_std_multiplier": 2.5,
+  "outlier_threshold": 16.512100219726562,
+  "outliers_removed": 18,
+  "used_samples": 663,
+  "quality_dropped_sample_code_numbers": [
+    1016277,
+    1293439
+  ],
+  "class_distribution_663": {
+    "benign": 442,
+    "malignant": 221
+  },
+  "optimizer": "SGD (premise/MF only)",
+  "grad_clip_norm": 1.0,
+  "sigma_min": 0.001,
+  "fuzzy_system": "FS() + grid 27 rules + learned consequent (zerotype=False)",
+  "membership_function": "Gaussian (low / medium / high)",
+  "rule_partitioning": "grid 3^3 = 27",
+  "num_rules": 27,
+  "scaler_path": "models\\20260628_172814_gridsearch_pca_feature_select_scaler.pkl",
+  "fuzzy_rules_csv_path": "models\\20260628_172814_gridsearch_pca_feature_select_fuzzy_rules.csv",
+  "grid_results_csv_path": "models\\hyperparam_grid_results.csv",
+  "splits": {
+    "80-20": {
+      "split_ratio": "80-20",
+      "test_size": 0.2,
+      "train_size": 530,
+      "test_n": 133,
+      "learning_rate": 0.05,
+      "epochs": 50,
+      "test_accuracy_pct": 95.49,
+      "model_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_best_model.pkl",
+      "loss_log_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_training_loss_log.csv",
+      "metrics_json_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_metrics.json",
+      "membership_csv_path": "models\\20260628_172814_gridsearch_pca_feature_select_80_20_membership_functions.csv",
+      "mf_init_log": [
+        {
+          "var": "Clump Thickness",
+          "mu": [
+            -1.2045,
+            0.417,
+            2.0384
+          ],
+          "sigma": 1.081
+        },
+        {
+          "var": "Uniformity of Cell Size",
+          "mu": [
+            -0.6809,
+            0.8781,
+            2.4372
+          ],
+          "sigma": 1.0394
+        },
+        {
+          "var": "Uniformity of Cell Shape",
+          "mu": [
+            -0.7237,
+            0.8793,
+            2.4824
+          ],
+          "sigma": 1.0687
+        }
+      ],
+      "grid_rules": [
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)"
+      ]
+    },
+    "70-30": {
+      "split_ratio": "70-30",
+      "test_size": 0.3,
+      "train_size": 464,
+      "test_n": 199,
+      "learning_rate": 0.05,
+      "epochs": 100,
+      "test_accuracy_pct": 95.98,
+      "model_path": "models\\20260628_172814_gridsearch_pca_feature_select_70_30_best_model.pkl",
+      "loss_log_path": "models\\20260628_172814_gridsearch_pca_feature_select_70_30_training_loss_log.csv",
+      "metrics_json_path": "models\\20260628_172814_gridsearch_pca_feature_select_70_30_metrics.json",
+      "membership_csv_path": "models\\20260628_172814_gridsearch_pca_feature_select_70_30_membership_functions.csv",
+      "mf_init_log": [
+        {
+          "var": "Clump Thickness",
+          "mu": [
+            -1.2045,
+            0.417,
+            2.0384
+          ],
+          "sigma": 1.081
+        },
+        {
+          "var": "Uniformity of Cell Size",
+          "mu": [
+            -0.6809,
+            0.8781,
+            2.4372
+          ],
+          "sigma": 1.0394
+        },
+        {
+          "var": "Uniformity of Cell Shape",
+          "mu": [
+            -0.7237,
+            0.8793,
+            2.4824
+          ],
+          "sigma": 1.0687
+        }
+      ],
+      "grid_rules": [
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)"
+      ]
+    },
+    "60-40": {
+      "split_ratio": "60-40",
+      "test_size": 0.4,
+      "train_size": 397,
+      "test_n": 266,
+      "learning_rate": 0.05,
+      "epochs": 100,
+      "test_accuracy_pct": 91.35,
+      "model_path": "models\\20260628_172814_gridsearch_pca_feature_select_60_40_best_model.pkl",
+      "loss_log_path": "models\\20260628_172814_gridsearch_pca_feature_select_60_40_training_loss_log.csv",
+      "metrics_json_path": "models\\20260628_172814_gridsearch_pca_feature_select_60_40_metrics.json",
+      "membership_csv_path": "models\\20260628_172814_gridsearch_pca_feature_select_60_40_membership_functions.csv",
+      "mf_init_log": [
+        {
+          "var": "Clump Thickness",
+          "mu": [
+            -1.2045,
+            0.417,
+            2.0384
+          ],
+          "sigma": 1.081
+        },
+        {
+          "var": "Uniformity of Cell Size",
+          "mu": [
+            -0.6809,
+            0.8781,
+            2.4372
+          ],
+          "sigma": 1.0394
+        },
+        {
+          "var": "Uniformity of Cell Shape",
+          "mu": [
+            -0.7237,
+            0.8793,
+            2.4824
+          ],
+          "sigma": 1.0687
+        }
+      ],
+      "grid_rules": [
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS low) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS medium) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS low) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS medium) AND (CellShape IS high) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS low) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS medium) THEN (out IS 0.5)",
+        "IF (ClumpThickness IS high) AND (CellSize IS high) AND (CellShape IS high) THEN (out IS 0.5)"
+      ]
+    }
+  }
+}
