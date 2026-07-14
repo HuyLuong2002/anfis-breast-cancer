@@ -1,0 +1,14 @@
+{
+  "stamp": "20260628_172814",
+  "run_tag": "gridsearch_pca_feature_select",
+  "split": "70-30",
+  "reason": "Stamp moi nhat; trong grid search, split 70/30 co TEST accuracy cao nhat (~94.47%)",
+  "files": {
+    "model.pt": "Checkpoint ANFIS (torch)",
+    "scaler.pkl": "StandardScaler fit tren 9 feature WBCD",
+    "meta.json": "Metadata + mf_init_log + selected features",
+    "metrics.json": "Metric TRAIN/TEST",
+    "membership_functions.csv": "Tham so Gaussian sau train",
+    "fuzzy_rules.csv": "27 luat IF-THEN (expert THEN) de giai thich"
+  }
+}
