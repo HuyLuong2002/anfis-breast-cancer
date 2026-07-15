@@ -2,7 +2,7 @@
 
 Dự án huấn luyện và đánh giá mô hình **ANFIS** (Adaptive Neuro-Fuzzy Inference System) trên bộ dữ liệu **Wisconsin Breast Cancer Dataset (WBCD)** — UCI Original. Pipeline bám theo paper *"Breast Cancer Diagnosis Based on Genetic-Fuzzy Logic and ANFIS Using WBCD"* (xem thư mục `paper/`).
 
-Môi trường chạy: Python local (khuyến nghị `.venv`) hoặc Google Colab. Thực thi qua **Jupyter Notebook**.
+Môi trường chạy: Python local (khuyến nghị `.venv`) hoặc Google Colab. Thực thi qua **Jupyter Notebook**; demo UI qua **Streamlit** (`streamlit_app.py`).
 
 ---
 
@@ -120,6 +120,7 @@ Tiền xử lý WBCD → Grid search → Lưu CSV (models/) + biểu đồ (plot
 | `matplotlib`, `seaborn` | Biểu đồ |
 | `scikit-anfis` | ANFIS estimator (fork local trong `scikit-anfis/`) |
 | `jupyter`, `nbconvert` | Chạy notebook, xuất HTML nhật ký |
+| `streamlit` | Demo UI dự đoán + giải thích luật mờ |
 
 ### Cài đặt local (Windows / Linux / macOS)
 
@@ -151,6 +152,21 @@ jupyter lab
 ```
 
 Mở notebook theo thứ tự nghiệp vụ ở bảng trên. Lần đầu chạy training cần kết nối internet để tải WBCD từ UCI.
+
+### Chạy demo Streamlit
+
+Demo web: nhập 3 đặc trưng WBCD → dự đoán ANFIS + giải thích luật mờ. File: `streamlit_app.py`.
+
+**Điều kiện trước khi chạy:** thư mục `best_model/` phải có đủ artifact (ví dụ `meta.json`, `metrics.json`, `info.json`, `scaler.pkl`, `fuzzy_rules.csv`, `membership_functions.csv`, checkpoint mô hình). Repo thường đã kèm sẵn; nếu thiếu thì lấy từ stamp tốt nhất trong `models/` (hiện tại `20260621_174830`).
+
+```bash
+# Đảm bảo đã activate .venv và cài requirements.txt (có streamlit)
+
+# Từ thư mục gốc dự án
+streamlit run streamlit_app.py
+```
+
+Trình duyệt sẽ mở (mặc định `http://localhost:8501`). Trong app: chỉnh 3 slider đặc trưng → bấm **Dự đoán**.
 
 ---
 
@@ -227,6 +243,8 @@ anfis-breast-cancer/
 ├── anfis_pca_scikit_anfis_training.ipynb   # Huấn luyện + grid search
 ├── anfis_pca_predict_full_wbcd.ipynb       # Dự đoán toàn tập WBCD
 ├── plot_split_dashboard.ipynb              # Vẽ biểu đồ trình bày
+├── streamlit_app.py                        # Demo UI Streamlit (dự đoán + giải thích)
+├── best_model/                             # Artifact phục vụ Streamlit
 ├── requirements.txt                        # Dependencies Python
 ├── scikit-anfis/                           # Fork thư viện ANFIS (editable install)
 ├── models/                                 # Checkpoint, metric, biểu đồ, CSV kết quả
